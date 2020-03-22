@@ -119,7 +119,7 @@ class MakeTargetsCommand(sublime_plugin.WindowCommand):
          update_phantoms_only=True
       ))
 
-      cmd = 'make -j{} {}'.format(self.job_num if self.job_num else '', target).strip()
+      cmd = 'make -j{} {}'.format(self.job_num if self.job_num else '', target).strip().split(" ")
 
       self.window.run_command('exec', dict(
          cmd=cmd,
